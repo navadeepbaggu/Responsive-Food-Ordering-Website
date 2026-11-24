@@ -110,12 +110,15 @@ body {
     margin-bottom: 25px;
 }
 
-/* CSS Grid Layout */
+
+
+/* CSS Grid Layout - Mobile First */
 .restaurant-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 25px;
 }
+
 
 /* Restaurant Cards */
 .restaurant-card {
@@ -160,8 +163,8 @@ body {
 
 /* Mobile First Responsive Design */
 
-/* Tablet */
-@media (max-width: 900px) {
+/* Tablet - 2 Columns */
+@media (min-width: 601px) {
     .restaurant-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -171,7 +174,14 @@ body {
     }
 }
 
-/* Mobile */
+/* Desktop - 3 Columns */
+@media (min-width: 901px) {
+    .restaurant-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile Header Adjustments */
 @media (max-width: 600px) {
     .header {
         flex-wrap: wrap;
@@ -190,14 +200,11 @@ body {
         font-size: 26px;
     }
 
-    .restaurant-container {
-        grid-template-columns: 1fr;
-    }
-
     .restaurants h2 {
         font-size: 23px;
     }
 }
+
 
 /* Container Query */
 @container (max-width: 260px) {
